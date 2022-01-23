@@ -1,0 +1,11 @@
+When 2 tables joined on INT and LONG columns error shown that there is join column mismatch
+
+select x, y
+from long_sequence(100) ls
+join (
+  select x ,y from long_sequence(100)
+) as ls2
+on CAST(ls.x as int)= ls2.y
+
+
+
